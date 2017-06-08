@@ -1,7 +1,5 @@
 
-package com.uberspot.a2048;
-
-import java.util.Locale;
+package com.uberspot.mydragonsland2048;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -26,6 +24,12 @@ import android.webkit.WebSettings.RenderPriority;
 import android.webkit.WebView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.mydragonsland.aa2048.R;
+
+import java.util.Locale;
+
 import de.cketti.library.changelog.ChangeLog;
 
 public class MainActivity extends Activity {
@@ -40,6 +44,7 @@ public class MainActivity extends Activity {
     private long mLastTouch;
     private static final long mTouchThreshold = 2000;
     private Toast pressBackToast;
+    private AdView mAdView;
 
     @SuppressLint({ "SetJavaScriptEnabled", "NewApi", "ShowToast" })
     @Override
@@ -77,6 +82,10 @@ public class MainActivity extends Activity {
         }
 
         setContentView(R.layout.activity_main);
+
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         ChangeLog cl = new ChangeLog(this);
         if (cl.isFirstRun()) {

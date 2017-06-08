@@ -1,0 +1,161 @@
+{
+  "project_info": {
+    "project_number": "9077897103",
+    "firebase_url": "https://ocrfirebaseproject.firebaseio.com",
+    "project_id": "ocrfirebaseproject",
+    "storage_bucket": "ocrfirebaseproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9077897103:android:bb29b01f2bded14e",
+        "android_client_info": {
+          "package_name": "com.mydragonsland.tools.ocr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9077897103-0609q0hqq41e2rq358a63fl0a7akhbqa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mydragonsland.tools.ocr",
+            "certificate_hash": "27005a5f3784350a86fa66280461f4aa33d71bc0"
+          }
+        },
+        {
+          "client_id": "9077897103-smkm9kqs36iktbqh3oi31vubkh6ir3pb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCJ5T64QDBPB3RsB6aWdhhdI62wAAPhnw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9077897103-smkm9kqs36iktbqh3oi31vubkh6ir3pb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9077897103:android:a04dfe9a89af8532",
+        "android_client_info": {
+          "package_name": "com.mydragonsland.tools.ocr.v2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9077897103-tu5mcb5nrd99c4klasp74p00rfbrldra.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mydragonsland.tools.ocr.v2",
+            "certificate_hash": "27005a5f3784350a86fa66280461f4aa33d71bc0"
+          }
+        },
+        {
+          "client_id": "9077897103-smkm9kqs36iktbqh3oi31vubkh6ir3pb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCJ5T64QDBPB3RsB6aWdhhdI62wAAPhnw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9077897103-smkm9kqs36iktbqh3oi31vubkh6ir3pb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9077897103:android:a64479ff437de662",
+        "android_client_info": {
+          "package_name": "utils.wx.com.showwifipassword"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9077897103-smkm9kqs36iktbqh3oi31vubkh6ir3pb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCJ5T64QDBPB3RsB6aWdhhdI62wAAPhnw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9077897103:android:4ece628343e3bf09",
+        "android_client_info": {
+          "package_name": "com.mydragonsland.aa2048"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9077897103-smkm9kqs36iktbqh3oi31vubkh6ir3pb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCJ5T64QDBPB3RsB6aWdhhdI62wAAPhnw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
