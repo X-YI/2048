@@ -26,11 +26,8 @@ dependencies {
     // Use the following line to include client library for Vision API from Maven Central Repository
     //
     compile 'com.android.support:appcompat-v7:23.0.1'
-    compile 'com.google.android.gms:play-services-ads:10.2.6'
-    compile 'com.google.android.gms:play-services-analytics:10.2.6'
-    compile 'com.google.firebase:firebase-core:10.0.1'
-    compile 'de.cketti.library.changelog:ckchangelog:1.2.2'
+    compile 'com.umeng.analytics:analytics:latest.integration'
+    compile files('libs/AppOffer_3.0.2.jar')
 }
 
 
-apply plugin: 'com.google.gms.google-services'

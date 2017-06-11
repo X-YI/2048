@@ -22,16 +22,16 @@ import android.view.WindowManager.LayoutParams;
 import android.webkit.WebSettings;
 import android.webkit.WebSettings.RenderPriority;
 import android.webkit.WebView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import com.mydragonsland.aa2048.R;
+import com.umeng.analytics.MobclickAgent;
 
 import java.util.Locale;
 
-import de.cketti.library.changelog.ChangeLog;
+import cn.waps.AppConnect;
+import cn.waps.AppListener;
 
 public class MainActivity extends Activity {
 
@@ -45,17 +45,30 @@ public class MainActivity extends Activity {
     private long mLastTouch;
     private static final long mTouchThreshold = 2000;
     private Toast pressBackToast;
-    private AdView mAdView;
-    private FirebaseAnalytics mFirebaseAnalytics;
-
     @SuppressLint({ "SetJavaScriptEnabled", "NewApi", "ShowToast" })
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         // Don't show an action bar or title
         requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        AppConnect.getInstance("2aa155f5756affdfbebedf33b6bc4630","QQ",this);
+        String showAd = AppConnect.getInstance(this).getConfig("showAd", "true");
+        // 设置互动广告无数据时的回调监听（该方法必须在showBannerAd之前调用）
+        AppConnect.getInstance(this).setBannerAdNoDataListener(new AppListener() {
+
+            @Override
+            public void onBannerNoData() {
+                Log.i("debug", "banner广告暂无可用数据");
+            }
+
+        });
+        // 互动广告调用方式
+        if (Boolean.parseBoolean(showAd)) {
+            LinearLayout layout = (LinearLayout) this.findViewById(R.id.adView);
+            AppConnect.getInstance(this).showBannerAd(this, layout);
+        }
 
         // If on android 3.0+ activate hardware acceleration
         if (Build.VERSION.SDK_INT >= 11) {
@@ -86,15 +99,6 @@ public class MainActivity extends Activity {
 
         setContentView(R.layout.activity_main);
 
-        mAdView = (AdView) findViewById(R.id.adView);
-        //.addTestDevice("3B8FC5F208A5C0D1587B8871A8EE7C82")
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
-        ChangeLog cl = new ChangeLog(this);
-        if (cl.isFirstRun()) {
-            cl.getLogDialog().show();
-        }
 
         // Load webview with game
         mWebView = (WebView) findViewById(R.id.mainWebView);
@@ -204,5 +208,20 @@ public class MainActivity extends Activity {
             pressBackToast.cancel();
             super.onBackPressed();
         }
+    }
+
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        AppConnect.getInstance(this).close();
+        super.onDestroy();
     }
 }
